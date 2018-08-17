@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
+		<meta name = "format-detection" content="telephone = no" />
+		<title>水果大作战</title>
+		<link type="text/css" href="css/Xcompany.css" rel="stylesheet" />
+		<link type="text/css" href="css/animate.css" rel="stylesheet" />
+		<link type="text/css" href="css/game.css?=9" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/poost.js?=9"></script>
+<!--		<script type="text/javascript" src="js/demoImg.js"></script>-->
+		<script type="text/javascript" src="common/js/common.js"></script>
+		<script type="text/javascript" src="js/wow.min.js"></script>
+		<script type="text/javascript" src="js/fruit.js?=7"></script>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		
+		<script type="text/javascript" src="js/font.js"></script>
+		<script type="text/javascript" src="js/style.js?=5"></script>
+		<script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+		<script type="text/javascript" src="js/kinerLottery.js"></script>
+		
+		<script type="text/javascript" src="js/appopen.js?t=1"></script>
+		<script type="text/javascript" src="js/fruit_socket.js?=6"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+	</head>
+	<body>
+	<div class="turntable">
+		<div class="beij"><img src="images/beij_z.png"></div>
+		<!--<div class="top txtMarquee-top">
+			<div class="bd">
+				<ul></ul>
+			</div>
+		</div>-->
+		<!--头部-->
+	  	<div class="poker_top">
+	  		<div class="pt_fl fl gold_num" onclick="appOen.showRechargeDialog1()">
+	  			<i class="icon_gold"></i><span class="num"></span><i class="icon_more"></i>
+	  			
+	  		</div>
+	  		<div class="pt_fr fr">
+	  			<ul>
+	  				<li class="pt_more"><a href="javascript:;"><img src="images/pk_icon3.png"></a>
+	  					<div class="pt_fr_list">
+	  						<!--<a href="javascript:;" id="btn_order">竞猜记录</a>
+	  						<a href="javascript:;" id="btn_rule">玩法介绍</a>
+	  						<a href="javascript:gotoHome();">返回首页</a>-->
+	  						<dl>
+	  							<dd class="order"><a href="javascript:;" id="btn_order">竞猜记录</a></dd>
+	  							<dd class="rule"><a href="javascript:;" id="btn_rule">玩法介绍</a></dd>
+	  							<dd class="home"><a href="javascript:gotoHome();">返回首页</a></dd>
+	  						</dl>
+	  					</div>
+	  				</li>
+	  				<li><a href="javascript:;" onclick='javascript:appOen.showGoldenShopDialog();'><img src="images/pk_icon2.png"></a></li>
+	  				<li><a href="javascript:;" onclick="javascript:appOen.gameTask(4);"><img src="images/pk_icon1.png"></a></li>
+	  			</ul>
+	  		</div>
+	  	</div>
+		<!--金豆数-->
+		<!--<div class="gold_num"><img src="images/icon2.png"><span class="num"></span><a href="javascript:;" class="btn_add" onclick="appOen.showRechargeDialog1()"><img src="images/icon1.png"></a></div>-->
+		<!--订单规则-->
+		<!--<div class="order"><a href="javascript:;">订单</a></div>
+		<div class="rule"><a href="javascript:;">规则</a></div>-->
+		<!--转盘桌面-->
+		<div class="table">
+			<div class="table_zz"></div>
+			<div class="table_roll">	
+				<div class="xz_title">
+					<div class="xz_title_imt"><img src="images/xz_num.png"></div>
+					<div class="xz_title_text">
+						<div class="table_number">第<span class="qishu"></span>期</div>
+				        <div class="table_title"><!--<img src="">--></div>
+					</div>
+				</div>
+				
+				<div class="table_beij"><img src="images/beij2_z.png"></div>
+				<div class="table_pointer"><img src="images/icon3_z.png"></div>
+				<!--灯-->
+				<div class="table_light">
+					<i class="imt1 on"></i><i class="imt2 on"></i><i class="imt3 on"></i><i class="imt4 on"></i><i class="imt5 on"></i><i class="imt6 on"></i>
+				</div>
+				<!--体验-->
+			    <div class="table_tiyan">
+			    	<div class="tiyan_number"></div>
+			    </div>
+				<div id="box" class="box">
+					<div class="innzz"><img src="images/zc_z.png"></div>
+					<div class="inner KinerLotteryBtn start">
+						<img src="images/btn_roll_z.png">
+						<div class="onnumber"><strong class="stn"></strong>/12</div>
+						<div class="onstart" style="display: none;">
+							<!--<img src="images/beij_roll.png" class="onstart_img onst">-->
+							<img src="images/img_start_z.png" class="onstart_text">
+						</div>
+						<div class="onresult">
+							<img src="images/title_result.png">
+							<strong class="stn result_text"></strong>
+						</div>
+					</div>
+			        <div class="outer KinerLottery KinerLotteryContent">
+			        	<div class="outer_beij"><img src="images/img_roll_z.png"></div>
+			        	<div class="outer_list">
+			        		<ul>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        		<li class="other"><a href="javascript:;">
+				        			<div class="title"></div>
+				        			<div class="imt"><img src=""></div>
+				        			<div class="user"><img src=""></div>
+				        		</a></li>
+				        	</ul>
+			        	</div>
+			        </div>
+			   </div>
+				<!---->
+			</div>
+		</div>
+		<!--开奖结束前往最新一期-->
+		<div class="gotoNew">
+			<div class="gn_beij"></div>
+			<div class="gn_imt"><img src="images/gotonew.png"></div>
+		</div>
+		<!--前往最新一期-->
+		<!--<div class="history"><a href="javascript:;" class="btn_history" onclick="window.location.reload();"><img src="images/btn_history.png"></a></div>-->
+		<!--转盘底部-->
+		<div class="dom">
+		  <div class="dom_list">
+		  	<div class="dl_fl"><img src="images/img1.png"></div>
+		  	<div class="dl_fr">
+		  		<ul></ul>
+		  	</div>
+		  </div>
+		  <div class="dom_menu ov">
+		  	<div class="dm_fl fl"></div>
+		  	<div class="dm_fr fr"><a href="javascript:;" class="btn_more"><img src="images/btn_more.png"></a></div>
+		  	<div class="menu_list">
+	  			<ul>
+	  				<!--<li><a class="active" href="javascript:;">1000金豆场</a></li>
+	  				<li><a href="javascript:;">2000金豆场</a></li>
+	  				<li><a href="javascript:;">5000金豆场</a></li>
+	  				<li><a href="javascript:;">10000金豆场</a></li>
+	  				<li><a href="javascript:;">20000金豆场</a></li>
+	  				<li><a href="javascript:;">50000金豆场</a></li>
+	  				<li><a href="javascript:;">10w金豆场</a></li>-->
+	  			</ul>
+	  			<i></i>
+	  		</div>
+		  </div>
+		</div>
+	</div>
+	<!--弹窗-->
+	<div class="tanc">
+		<div class="tanc_beij" style="display: none;"></div>
+		<!--参与弹窗-->
+		<div class="tanc_text tanc_join wow animated" style="display: none;">
+			<h3 class="title">参与【哈密瓜】将消耗50000金豆，请确认</h3>
+			<div class="btn">
+				<a href="javascript:;" class="btn_qx"><img src="images/btn_qx.png"></a>
+				<a href="javascript:;" class="btn_ok"><img src="images/btn_ok.png"></a>
+			</div>
+			<div class="tix">
+				<span class="fl tix_text">不再提醒</span>
+				<div class="fr tix_check"><input type="checkbox" value=""/></div>
+			</div>
+		</div>
+		<!--已被购买弹窗-->
+		<div class="tanc_text tanc_join wow animated" style="display: none;">
+			<h3 class="title">【哈密瓜】被人先买走啦，换个水果吧~</h3>
+			<div class="btn">
+				<a href="javascript:;" class="btn_know"><img src="images/btn_know.png"></a>
+			</div>
+		</div>
+	</div>
+	<!--余额不足弹窗-->
+	<div class="tanc tanc_cz" style="display: none;">
+		<div class="tanc_beij"></div>
+		<div class="tanc_text tanc_join wow animated">
+			<h3 class="title">金豆不足，请前往充值</h3>
+			<div class="btn">
+				<a href="javascript:;" class="btn_qx"><img src="images/btn_qx.png"></a>
+				<a href="javascript:;" class="btn_ok"><img src="images/btn_cz.png"></a>
+			</div>
+		</div>
+	</div>
+	<!--订单弹窗-->
+	<div class="tanc tanc_order" style="display: none;">
+		<div class="tanc_beij"></div>
+		<div class="tanc_text tanc_order_text">
+			<!--无订单列表-->
+			<div class="none" style="display: none;"><img src="images/icon_none.png"></div>
+			<!--有订单列表-->
+			<ul class="order_list" style="display: none;"></ul>
+		</div>
+	</div>
+	<!--提示弹窗-->
+	<div class="tisText"><span class="tisInfo"></span></div>
+	<!--规则弹窗-->
+	<div class="tanc tanc_rule" style="display: none;">
+		<div class="tanc_beij"></div>
+		<div class="tanc_text tanc_order_text">
+			<div class="rule_info">
+				<div class="info_top">
+					<div class="title"><img src="images/fruit_title1.png"></div>
+					<div class="top_text">
+						<div class="ov"><label>1</label><span class="spn">从“苹果、草莓、香蕉、李子、橙子、樱桃、荔枝、桂圆、哈密瓜、梨、葡萄、西瓜”12种水果中，随机开出一种；</span></div>
+						<table cellpadding="0" cellspacing="0" width="100%" class="tb1">
+							<tr>
+								<td><img src="images/fruit12.png"></td>
+								<td><img src="images/fruit2.png"></td>
+								<td><img src="images/fruit3.png"></td>
+								<td><img src="images/fruit4.png"></td>
+							</tr>
+							<tr>
+								<td><img src="images/fruit6.png"></td>
+								<td><img src="images/fruit5.png"></td>
+								<td><img src="images/fruit7.png"></td>
+								<td><img src="images/fruit8.png"></td>
+							</tr>
+							<tr>
+								<td><img src="images/fruit9.png"></td>
+								<td><img src="images/fruit10.png"></td>
+								<td><img src="images/fruit11.png"></td>
+								<td><img src="images/fruit1.png"></td>
+							</tr>
+						</table>
+						<div class="ov"><label>2</label><span class="spn">猜出所开出选项的，获得对应金豆场所有金豆奖励。奖励详情如下：</span></div>
+						<table cellpadding="0" cellspacing="0" width="100%" class="tb2">
+							<tr>
+								<td width="16%">您参与的金豆场</td>
+								<td><span class="num spn">1000</span><span class="tet spn">金豆场</span></td>
+								<td><span class="num spn">2000</span><span class="tet spn">金豆场</span></td>
+								<td><span class="num spn">5000</span><span class="tet spn">金豆场</span></td>
+								<td><span class="num spn">10000</span><span class="tet spn">金豆场</span></td>
+								<td><span class="num spn">20000</span><span class="tet spn">金豆场</span></td>
+								<td><span class="num spn">50000</span><span class="tet spn">金豆场</span></td>
+								<td><span class="num spn">100000</span><span class="tet spn">金豆场</span></td>
+							</tr>
+							<tr>
+								<td width="16%">奖励金豆数</td>
+								<td><span class="num">1000</span></td>
+								<td><span class="num">2000</span></td>
+								<td><span class="num">5000</span></td>
+								<td><span class="num">10000</span></td>
+								<td><span class="num">20000</span></td>
+								<td><span class="num">50000</span></td>
+								<td><span class="num">100000</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="info_down">
+					<div class="title"><img src="images/fruit_title2.png"></div>
+					<div class="down_text">
+						<P>1、用户进入该金豆场后，可从转盘12种水果中随机挑选<span class="ce5">某一种或几种</span>作为竞猜对象。</P>
+						<P>2、竞猜时，每种水果参与金豆数固定（具体以页面标注为准）；用户只需<span class="ce5">手指点击该水果所在区域</span>即视为选择竞猜该类水果，选择后弹窗提示确认；弹窗内可选择勾选“不再提醒”功能，若勾选“不再提醒”将关闭弹窗提示。参与成功后不可撤销。</P>
+						<P>3、待转盘内所有水果参与满后即可开奖，开奖时从12种水果中均匀随机开出其中一种。用户猜中所开出水果的，可获本场金豆场所有金豆奖励。</P>
+						<P>4、除另有说明外，不论用户的竞猜结果如何，用户参与的金豆因参与竞猜而消耗完毕，无法进行返还。如您竞猜获胜，则获得的</P>
+						<P><strong class="stn">注意事项：</strong></P>
+						<P><label>01</label><span class="ca4">如遇到不可抗力或其它客观原因导致活动竞猜无法继续进行，则用户投入的金豆将会全额返还到用户的账户余额中，欢乐竞猜无需因此而承担任何赔偿或补偿责任。</span></P>
+						<P><label>02</label><span class="ca4">活动期间，如用户存在违规行为（包括但不限于机器作弊），欢乐竞猜将取消用户的竞猜获奖资格，并有权依照欢乐竞猜相关规则进行处理。</span></P>
+						<P><label>03</label><span class="ca4">欢乐竞猜可根据活动举办的实际情况，在法律允许的范围内，对本活动规则进行变动和调整，相关变动或调整将公布在活动页面上。</span></P>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--自己中奖弹窗-->
+	<div class="tanc tanc_mySuccess tanc_win" style="display: none;">
+		<div class="tanc_beij" onclick="disable()"></div>
+		<div class="tanc_text tanc_my">
+			<div class="cd  wow animated" data-wow-duration="1.0s" data-wow-delay="1.0s"><img src="images/icon_cd.png"></div>
+			<div class="title wow animated" data-wow-duration="1.0s" data-wow-delay="0.4s"><img src="images/icon_title.png"></div>
+			<div class="gold  wow animated" data-wow-duration="1.0s">
+				<div class="gold_d"><img src="images/icon_gold.png"></div>
+				<div class="gold_light"><img src="images/icon_light.png"></div>
+			</div>
+			<div class="num num_1000 wow animated" data-wow-duration="1.0s"></div>
+			<div class="btn wow animated" data-wow-duration="1.0s" data-wow-delay="0.4s"><a href="javascript:;" onclick="disable()"><img src="images/btn_sure.png"></a></div>
+		</div>
+	</div>
+	<!--现在的时间-->
+	<div class="now_time"></div>
+	<!--自己投注水果-->
+	<div class="my_fruit"></div>
+	<!--他人中奖弹窗-->
+	<div class="tanc tanc_myOther tanc_win" style="display: none;">
+		<div class="tanc_beij" onclick="disable()"></div>
+		<div class="tanc_text tanc_other">
+			<div class="title wow animated" data-wow-duration="1.0s" data-wow-delay="0.4s">
+				<img src="images/icon_title2.png">
+				<div class="title_text">恭喜【<strong class="stn name">黄*火</strong>】在<strong class="stn num">13333333</strong>期</div>
+			</div>
+			<div class="gold  wow animated" data-wow-duration="1.0s">
+				<div class="gold_imt"><img src="images/img2.png"></div>
+				<div class="gold_light"><img src="images/icon_light.png"></div>
+			</div>
+			<div class="num wow animated" data-wow-duration="1.0s">参与<strong class="stn sfz">【苹果】</strong>中奖，奖励<strong class="num sfz">【1000金豆】</strong></div>
+			<div class="btn wow animated" data-wow-duration="1.0s" data-wow-delay="0.4s">
+				<a href="javascript:;" onclick="disable()"><img src="images/btn_sure2.png"></a>
+				<!--<a href="javascript:;" onclick="disable()"><img src="images/btn_new2.png"></a>-->
+			</div>
+		</div>
+	</div>
+	<!--网络中断弹窗-->
+	<div class="noline" style="display: none;">
+		<div class="noline_beij" onclick="disable()">
+			<div class="tanc_text tanc_join">
+			<h3 class="title">网络连接不稳定，请刷新后重新连接</h3>
+			<div class="btn">
+				<a href="javascript:;" class="btn_refresh"><img src="images/btn_refresh.png"></a>
+				<!--<a href="javascript:;" class="btn_ok" onclick="appOen.showRechargeDialog1()"><img src="images/btn_cz.png"></a>-->
+			</div>
+		</div>
+		</div>
+	</div>
+	<div class="roll_num"></div>
+	<!--转盘js-->
+	<!--旋转角度-->
+	<div class="roll_deg"></div>
+	<!--获取shop_id-->
+	<div class="shop_id"></div>
+	<!--余额不足弹窗-->
+	<div class="tanc tanc_cz" style="display: none;">
+		<div class="tanc_beij"></div>
+		<div class="tanc_text tanc_join wow animated">
+			<h3 class="title">金豆不足，请前往充值</h3>
+			<div class="btn">
+				<a href="javascript:;" class="btn_qx"><img src="images/btn_qx.png"></a>
+				<a href="javascript:;" class="btn_ok" onclick="appOen.showRechargeDialog1()"><img src="images/btn_cz.png"></a>
+			</div>
+		</div>
+	</div>
+	<!---->
+	<div class="tanc tanc_huoq" style="display: none;">
+		<div class="tanc_beij"></div>
+		<div class="huoq">
+			<div class="huoq_close"><img src="images/huoq_close.png"></div>
+			<div class="huoq_title">
+				<img src="images/huoq_title.png">
+				<h3 class="title">友情提示</h3>
+			</div>
+			<div class="huoq_box">
+				<div class="huoq_text"><p class='huoq_text_text'>您可以到欢乐竞猜APP内获取哦！</p></div>
+				<div class="huoq_btn"><a href="javascript:;" class="btn_load">去获取</a></div>
+			</div>
+		</div>
+	</div>
+	<!--0104新增-->
+	<script type="text/javascript">
+		$(function(){
+			//头部下拉菜单显示隐藏
+			$(".pt_more").click(function(){
+				if($(".pt_fr_list").is(":visible")){
+					$(".pt_fr_list").hide();
+				}else{
+					$(".pt_fr_list").show();
+				}
+				event.stopPropagation(); 
+			});
+			var flag=true;
+			setInterval(function(){
+				if(flag){
+					$(".table_light i").addClass("on");
+					$(".table_light i").removeClass("off");
+					flag=false;
+				}else{
+					$(".table_light i").addClass("off");
+					$(".table_light i").removeClass("on");
+					flag=true;
+				}
+			},500);
+			$(".btn_more").click(function(){
+				if($(".menu_list").is(":visible")){
+					$(".menu_list").slideUp();
+				}else{
+					$(".menu_list").slideDown();
+				}
+				event.stopPropagation();
+			})
+			$("body").bind("click",function(){
+				$(".menu_list").slideUp();
+				$(".pt_fr_list").hide();
+			});
+		})
+	</script>
+	<script>
+        var KinerLottery = new KinerLottery({
+            rotateNum: 6, //转盘转动圈数
+            body: "#box", //大转盘整体的选择符或zepto对象
+            direction: 0, //0为顺时针转动,1为逆时针转动
+            disabledHandler: function(key) {
+                switch (key) {
+                    case "noStart":
+                        alert("活动尚未开始");
+                        break;
+                    case "completed":
+                        alert("活动已结束");
+                        break;
+                }
+            }, //禁止抽奖时回调
+            clickCallback: function() {
+                //此处访问接口获取奖品
+                function random() {
+                	return Math.floor(roll_deg* 360);
+                }
+                this.goKinerLottery(random());
+            }, //点击抽奖按钮,再次回调中实现访问后台获取抽奖结果,拿到抽奖结果后显示抽奖画面
+            KinerLotteryHandler: function(deg) {
+//          	    $(".tanc_text #info_top .name").html(whichAward(deg));
+            	    $(".onstart").hide();
+            	    $(".onresult").show();
+                    var z_tm = setTimeout(function(){
+                    var imt=$(".latest").find("img").attr("src");
+                        $(".dom_menu a").addClass("btn");
+                        $(".outer_list a").removeClass("btn");
+                        $(".outer_list li").removeClass("active");
+                        $(".outer_list li").removeClass("my");
+                    },500);
+                } 
+                //抽奖结束回调
+        });
+    </script>
+	<script>
+		var wow = new WOW({
+		    boxClass: 'wow',
+		    animateClass: 'animated',
+		    offset: 0,
+		    mobile: true,
+		    live: true,
+		    scrollBar: true
+		});
+		wow.init();   
+	</script>
+	<script type="text/javascript">
+		jQuery(".txtMarquee-left").slide({mainCell:".bd ul",autoPlay:true,effect:"leftMarquee",interTime:50,trigger:"click"});
+	</script>
+	</body>
+</html>
